@@ -6,8 +6,16 @@ function multiplesOf3and5(number) {
     var sum = 0;
     var i = 3;
     while (i < number) {
-        if (i % 3 == 0 || i % 5 == 0) sum += i;
-        i++;
+        if (i % 3 == 0){
+            sum += i;
+            i++;
+        }
+        else if (i % 5 == 0){
+            sum += i;
+            i++;
+        } else {
+            i++;
+        }
     }
     return sum;
 }
