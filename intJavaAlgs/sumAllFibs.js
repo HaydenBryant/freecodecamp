@@ -4,11 +4,11 @@
 // For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
 function sumFibs(num) {
-  if (num < 0){
-     return -1;
+  if (num < 0) {
+    return -1;
   }
 
-  if (num === 0 || num === 1){
+  if (num === 0 || num === 1) {
     return 1;
   }
 
@@ -18,19 +18,18 @@ function sumFibs(num) {
   var fibSum = 0;
 
 
-  for (var i = 0; fibNum1 <= num; i++){
-      fibSum = fibNum1 + fibNum2;
-      fibNum1 = fibNum2;
-      fibNum2 = fibSum;
-      
-      if (fibSum % 2 !== 0){
-        oddFibNum.push(fibSum);
-      }      
+  for (var i = 0; fibSum <= num; i++) {
+    if (fibSum % 2 !== 0) {
+      oddFibNum.push(fibSum);
+    }
+    fibSum = fibNum1 + fibNum2;
+    fibNum1 = fibNum2;
+    fibNum2 = fibSum;
   }
 
-  return oddFibNum.reduce((acc, curr) => {
-    return acc + curr;
-  });
+  return oddFibNum.reduce(
+    ( accumulator, currentValue ) => accumulator + currentValue,
+    );
 }
 
 sumFibs(10);
@@ -41,6 +40,6 @@ sumFibs(10);
   //}
   //push
   //add     
-//   numbers.reduce(
-//     ( accumulator, currentValue ) => accumulator + currentValue,
-//     );
+  // numbers.reduce(
+  //   ( accumulator, currentValue ) => accumulator + currentValue,
+  //   );
