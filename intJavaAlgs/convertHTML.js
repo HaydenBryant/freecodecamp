@@ -4,26 +4,27 @@ function convertHTML(str) {
 
     str = str.split('');
 
-    str.map(element =>{
-        if(element === '<'){
-            str.join('&lt;');
-        } else if(element === '>'){
-            str.join('&gt;');
-        } else if(element === '&'){
-            element.replace(element, '&amp;');
+    for (var i = 0; i < str.length; i++) {
+
+        if (str[i] === '<') {
+            str[i] = '&lt;';
+        } else if (str[i] === '>') {
+            str[i] = '&gt;';
+        } else if (str[i] === '&') {
+            str[i] = '&amp;';
             // str.join(element);
-        } else if(element === '"'){
-            str.join('&quot;');
-        } else if(element === "'"){
-            str.join("&apos;");
+        } else if (str[i] === '"') {
+            str[i] = '&quot;';
+        } else if (str[i] === "'") {
+            str[i] = '&apos;';
         }
 
-    });
+    };
 
-    str.join('')
+    str = str.join('');
 
     // &colon;&rpar;
     return str;
-  }
-  
-  convertHTML("Dolce & Gabbana");
+}
+
+convertHTML("Dolce & Gabbana");
