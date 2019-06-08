@@ -1,14 +1,13 @@
 function dropElements(arr, func) {
+  var array = [];
 
-    for (var i = 0; i < arr.length; i++) {
-      if (func(arr[0])) {
-        break;
-      } else {
-        arr.shift();
-      }
+  for (var i = 0; i < arr.length; i++) {
+    if (func(arr[i]) == true) {
+      return arr.slice(i);
     }
-    return arr;
   }
-  
-  
-  dropElements([1, 2, 3], function (n) { return n < 3; });
+
+  return array;
+};
+
+dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;});
