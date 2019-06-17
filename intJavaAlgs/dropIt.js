@@ -10,4 +10,4 @@ function dropElements(arr, func) {
   return array;
 };
 
-dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;});
+dropElements([1, 2, 3, 4], function(n) {return n > 5;})
