@@ -8,7 +8,6 @@ function translatePigLatin(str) {
   } else if(str.match(vowel) === null) {
     output = str + 'ay';
   } else {
-
     var vIndex = str.indexOf(str.match(vowel)[0]);
 
     output = str.substr(vIndex) + str.substr(0, vIndex) + 'ay';
