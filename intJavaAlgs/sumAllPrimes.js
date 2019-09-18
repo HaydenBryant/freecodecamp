@@ -1,11 +1,8 @@
 function sumPrimes(num) {
-    if (num < 2) {
-        return 0;
-    } else if (num === 2){
-        return 2;
-    }
+    if (num < 2) return 0;
+    else if (num === 2) return 2;
 
-    var primeNums = [2];    
+    var primeNums = [2];
 
     for (var i = 3; i <= num; i++) {
         var prime = true;
@@ -24,5 +21,6 @@ function sumPrimes(num) {
     
     return sumAll;
 }
+
 
 sumPrimes(10);

@@ -5,17 +5,17 @@ function steamrollArray(arr) {
     // I'm a steamroller, baby
     var string = arr.toString();
     var newArr = string.split(",")
-    for (let i = 0; i < newArr.length; i++) {
-      if(Number.isInteger(parseInt(newArr[i]))){
-        newArr[i] = parseInt(newArr[i])
-      }else if(newArr[i] == '[object Object]'){
-        newArr[i] = {};
-      }else if (newArr[i] == '') {
-        newArr.splice(i,1)
-        i--;
+    newArr.map(function(e) {
+      if (e == '[object Object]') { 
+        e = {};
+      } else if (isNaN(e)) {
+        e = e;
+      } else {
+        e = parseInt(e);
       }
 
-    }
+    })
+
     return newArr;
 
   }

@@ -3,43 +3,57 @@
 // The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
 // For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
-function sumFibs(num) {
-  if (num < 0) {
-    return -1;
+function generateFibonacci(num) {
+  if (num < 0) return -1;
+  else if (num === 0 || num === 1) return 1;
+
+  const fibonacciArray = [1, 1];
+  var fibonacciNumber = 0;
+
+  while((fibonacciNumber = fibonacciArray[0] + fibonacciArray[1]) <= num) {
+    fibonacciArray.unshift(fibonacciNumber);
   }
 
-  if (num === 0 || num === 1) {
-    return 1;
-  }
-
-  var oddFibNum = [1, 1];
-  var fibNum1 = 1;
-  var fibNum2 = 1;
-  var fibSum = 0;
-
-
-  for (var i = 0; fibSum <= num; i++) {
-    if (fibSum % 2 !== 0) {
-      oddFibNum.push(fibSum);
-    }
-    fibSum = fibNum1 + fibNum2;
-    fibNum1 = fibNum2;
-    fibNum2 = fibSum;
-  }
-
-  return oddFibNum.reduce(
-    ( accumulator, currentValue ) => accumulator + currentValue,
-    );
 }
 
-sumFibs(10);
+function sumOddFibs(fibonacciArray){
+  return fibonacciArray.filter(fib % 2 !== 0).reduce((accumulator, currentValue) => accumulator + currentValue);
+}
+
+generateFibonacci(10);
+sumOddFibs(fibonacciArray);
 
 
-  //for
-  //num1 + num = num1
-  //}
-  //push
-  //add     
-  // numbers.reduce(
-  //   ( accumulator, currentValue ) => accumulator + currentValue,
-  //   );
+//   var oddfibonacciNumber = [1, 1];
+//   var fibonacciNumber1 = 1;
+//   var fibonacciNumber2 = 1;
+//   var fibSum = 0;
+
+//   for (var i = 0; fibSum <= num; i++) {
+//     if (fibSum % 2 !== 0) {
+//       oddfibonacciNumber.push(fibSum);
+//     }
+//     fibSum = fibonacciNumber1 + fibonacciNumber2;
+//     fibonacciNumber1 = fibonacciNumber2;
+//     fibonacciNumber2 = fibSum;
+//   }
+
+//   return oddfibonacciNumber.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue
+//   );
+// }
+
+// sumFibs(10);
+
+//for
+//num1 + num = num1
+//}
+//push
+//add
+// numbers.reduce(
+//   ( accumulator, currentValue ) => accumulator + currentValue,
+//   );
+
+// function to return array of fibonacci numbers
+// function to sum odd numbers of the array
+// .filter.reduce
