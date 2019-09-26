@@ -15,7 +15,7 @@
 //     return arr;
 // }
 
-const whatIsInAName = (collection, source) => { return (collection.filter(element => checkObjectForSourceKeyValuePairs(source, element)))}
+const whatIsInAName = (collection, source) => { return (collection.filter(element => console.log(source, element)))}
 
 const checkObjectForSourceKeyValuePairs = (source, obj) => {
     let check = true;
